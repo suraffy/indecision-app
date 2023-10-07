@@ -13,12 +13,20 @@ class App extends Component {
     ],
   };
 
+  handleAddOption = (optionText) => {
+    const newId = this.state.options.length + 1;
+
+    this.setState((preState) => ({
+      options: [...preState.options, { id: newId, text: optionText }],
+    }));
+  };
+
   render() {
     return (
       <div>
         <Header />
         <Options options={this.state.options} />
-        <AddOption />
+        <AddOption onAddOption={this.handleAddOption} />
       </div>
     );
   }
