@@ -14,6 +14,10 @@ class App extends Component {
     ],
   };
 
+  handleRemoveAllOptions = (id) => {
+    this.setState({ options: [] });
+  };
+
   handleRemoveOption = (id) => {
     this.setState((prevState) => ({
       options: prevState.options.filter((option) => option.id !== id),
@@ -46,6 +50,7 @@ class App extends Component {
       <div>
         <Header />
         <Options
+          onRemoveAllOptions={this.handleRemoveAllOptions}
           onRemoveOption={this.handleRemoveOption}
           options={this.state.options}
         />
