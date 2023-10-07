@@ -1,7 +1,7 @@
-const Action = () => {
+const Action = (props) => {
   return (
     <div>
-      <button>What should I do?</button>
+      <button onClick={props.onPickOption}>What should I do?</button>
     </div>
   );
 };

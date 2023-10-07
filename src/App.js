@@ -15,6 +15,13 @@ class App extends Component {
     ],
   };
 
+  handlePickOption = () => {
+    const length = this.state.options.length;
+    const random = Math.floor(Math.random() * length);
+
+    alert(this.state.options[random].text);
+  };
+
   handleRemoveAllOptions = (id) => {
     this.setState({ options: [] });
   };
@@ -50,7 +57,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Action />
+        <Action onPickOption={this.handlePickOption} />
         <Options
           onRemoveAllOptions={this.handleRemoveAllOptions}
           onRemoveOption={this.handleRemoveOption}
