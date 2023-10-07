@@ -29,8 +29,12 @@ class App extends Component {
       return "This Option already exits! Add a new one.";
     }
 
-    const options = this.state.options;
-    const newId = options[options.length - 1].id + 1;
+    // set newId to 1, if this.state.options is empty
+    let newId = 1;
+    const options = this.state.options.length;
+    if (options) {
+      newId = options[options.length - 1].id + 1;
+    }
 
     this.setState((preState) => ({
       options: [...preState.options, { id: newId, text: text }],
