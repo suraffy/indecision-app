@@ -4,7 +4,12 @@ const Options = (props) => {
   return (
     <div>
       <h3>Your Options</h3>
-      <button onClick={props.onRemoveAllOptions}>Remove All</button>
+      <button
+        disabled={!props.options.length}
+        onClick={props.onRemoveAllOptions}
+      >
+        Remove All
+      </button>
 
       <ul>
         {props.options.map((option) => (
