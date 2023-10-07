@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
+import Action from "./components/Action";
 import Options from "./components/Options";
 import AddOption from "./components/AddOption";
 import "./App.css";
@@ -49,6 +50,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <Action />
         <Options
           onRemoveAllOptions={this.handleRemoveAllOptions}
           onRemoveOption={this.handleRemoveOption}
