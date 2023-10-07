@@ -10,14 +10,23 @@ class App extends Component {
       { id: 1, text: "Take out trash" },
       { id: 2, text: "Exercise" },
       { id: 3, text: "Breakfast" },
+      { id: 4, text: "sura" },
     ],
   };
 
-  handleAddOption = (optionText) => {
+  handleAddOption = (text) => {
+    if (!text) {
+      return "Please add an Option!";
+    }
+
+    if (this.state.options.find((option) => option.text === text)) {
+      return "This Option already exits! Add a new one.";
+    }
+
     const newId = this.state.options.length + 1;
 
     this.setState((preState) => ({
-      options: [...preState.options, { id: newId, text: optionText }],
+      options: [...preState.options, { id: newId, text: text }],
     }));
   };
 

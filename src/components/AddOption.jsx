@@ -1,8 +1,13 @@
 const AddOption = (props) => {
   const handleSubmit = (e) => {
-    console.log("handleSum");
     e.preventDefault();
-    props.onAddOption(e.target.elements.option.value);
+
+    const optionEl = e.target.elements.option;
+
+    const error = props.onAddOption(optionEl.value.trim());
+
+    if (!error) optionEl.value = "";
+    console.log(error);
   };
 
   return (
