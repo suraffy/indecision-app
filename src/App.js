@@ -14,6 +14,12 @@ class App extends Component {
     ],
   };
 
+  handleRemoveOption = (id) => {
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => option.id !== id),
+    }));
+  };
+
   handleAddOption = (text) => {
     if (!text) {
       return "Please add an Option!";
@@ -35,7 +41,10 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Options options={this.state.options} />
+        <Options
+          onRemoveOption={this.handleRemoveOption}
+          options={this.state.options}
+        />
         <AddOption onAddOption={this.handleAddOption} />
       </div>
     );

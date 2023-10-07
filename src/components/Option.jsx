@@ -2,7 +2,9 @@ const Option = (props) => {
   return (
     <li>
       <span>{props.option.text}</span>
-      <button>remove</button>
+      <button onClick={() => props.onRemoveOption(props.option.id)}>
+        remove
+      </button>
     </li>
   );
 };
