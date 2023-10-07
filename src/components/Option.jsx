@@ -1,7 +1,7 @@
-const Option = () => {
+const Option = (props) => {
   return (
     <li>
-      <span>Option One</span>
+      <span>{props.option.text}</span>
       <button>remove</button>
     </li>
   );

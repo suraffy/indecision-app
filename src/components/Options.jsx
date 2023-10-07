@@ -1,11 +1,11 @@
 import Option from "./Option";
 
-const Options = () => {
+const Options = (props) => {
   return (
     <ul>
-      <Option />
-      <Option />
-      <Option />
+      {props.options.map((option) => (
+        <Option key={option.id} option={option} />
+      ))}
     </ul>
   );
 };

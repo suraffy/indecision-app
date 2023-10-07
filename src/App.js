@@ -5,12 +5,19 @@ import AddOption from "./components/AddOption";
 import "./App.css";
 
 class App extends Component {
-  state = {};
+  state = {
+    options: [
+      { id: 1, text: "Take out trash" },
+      { id: 2, text: "Exercise" },
+      { id: 3, text: "Breakfast" },
+    ],
+  };
+
   render() {
     return (
       <div>
         <Header />
-        <Options />
+        <Options options={this.state.options} />
         <AddOption />
       </div>
     );
