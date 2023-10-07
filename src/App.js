@@ -31,8 +31,8 @@ class App extends Component {
 
     // set newId to 1, if this.state.options is empty
     let newId = 1;
-    const options = this.state.options.length;
-    if (options) {
+    const options = this.state.options;
+    if (options.length) {
       newId = options[options.length - 1].id + 1;
     }
 
