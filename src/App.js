@@ -7,14 +7,23 @@ import OptionModal from "./components/OptionModal";
 
 class App extends Component {
   state = {
-    options: [
-      { id: 1, text: "Take out trash" },
-      { id: 2, text: "Exercise" },
-      { id: 3, text: "Breakfast" },
-      { id: 4, text: "sura" },
-    ],
+    options: [],
     selectedOption: undefined,
   };
+
+  componentDidMount() {
+    const optionsJSON = localStorage.getItem("options");
+    const options = JSON.parse(optionsJSON);
+
+    if (options) {
+      this.setState({ options });
+    }
+  }
+
+  componentDidUpdate() {
+    const optionsJSON = JSON.stringify(this.state.options);
+    localStorage.setItem("options", optionsJSON);
+  }
 
   handleClearSelectedOption = () => {
     this.setState(() => ({ selectedOption: undefined }));
