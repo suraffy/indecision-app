@@ -67,7 +67,10 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Action onPickOption={this.handlePickOption} />
+        <Action
+          hasOptions={this.state.options.length > 0}
+          onPickOption={this.handlePickOption}
+        />
         <Options
           onRemoveAllOptions={this.handleRemoveAllOptions}
           onRemoveOption={this.handleRemoveOption}
