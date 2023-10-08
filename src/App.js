@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Action from "./components/Action";
 import Options from "./components/Options";
 import AddOption from "./components/AddOption";
+import OptionModal from "./components/OptionModal";
 import "./App.css";
 
 class App extends Component {
@@ -64,6 +65,7 @@ class App extends Component {
           options={this.state.options}
         />
         <AddOption onAddOption={this.handleAddOption} />
+        <OptionModal />
       </div>
     );
   }
