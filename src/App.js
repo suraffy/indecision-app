@@ -14,13 +14,22 @@ class App extends Component {
       { id: 3, text: "Breakfast" },
       { id: 4, text: "sura" },
     ],
+    selectedOption: undefined,
+  };
+
+  handleClearSelectedOption = () => {
+    this.setState(() => ({ selectedOption: undefined }));
   };
 
   handlePickOption = () => {
     const length = this.state.options.length;
-    const random = Math.floor(Math.random() * length);
 
-    alert(this.state.options[random].text);
+    if (length === 0) return;
+
+    const random = Math.floor(Math.random() * length);
+    const selectedOption = this.state.options[random].text;
+
+    this.setState({ selectedOption });
   };
 
   handleRemoveAllOptions = (id) => {
@@ -65,7 +74,10 @@ class App extends Component {
           options={this.state.options}
         />
         <AddOption onAddOption={this.handleAddOption} />
-        <OptionModal />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          onClearSelectedOption={this.handleClearSelectedOption}
+        />
       </div>
     );
   }
