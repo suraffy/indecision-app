@@ -4,7 +4,6 @@ import Action from "./components/Action";
 import Options from "./components/Options";
 import AddOption from "./components/AddOption";
 import OptionModal from "./components/OptionModal";
-// import "./styles/style.css";
 
 class App extends Component {
   state = {
