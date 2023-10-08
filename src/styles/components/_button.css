@@ -1,0 +1,44 @@
+.big-button {
+  background: var(--purple);
+  border: none;
+  border-bottom: 0.6rem solid var(--purple-darken);
+  color: white;
+  font-weight: bold;
+  font-size: var(--l-size);
+  width: 100%;
+  margin-bottom: var(--m-size);
+  padding: 2.4rem;
+}
+
+.big-button:disabled {
+  opacity: 0.5;
+}
+
+@media (min-width: 45rem) {
+  .big-button {
+    margin-bottom: var(--xl-size);
+  }
+}
+
+.button {
+  background: var(--purple);
+  border: none;
+  border-bottom: 0.3rem solid var(--purple-darken);
+  color: white;
+  font-weight: 500;
+  padding: var(--s-size);
+}
+
+.button--link {
+  background: none;
+  border: none;
+  color: var(--off-white);
+  padding: 0;
+  margin-left: var(--s-size);
+}
+
+@media (min-width: 45rem) {
+  .button--link {
+    margin-left: var(--l-size);
+  }
+}

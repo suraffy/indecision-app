@@ -1,0 +1,13 @@
+.option {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--l-size) var(--m-size);
+  border-bottom: 1px solid var(--light-blue-darken);
+}
+
+.option__text {
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  word-break: break-all;
+}

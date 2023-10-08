@@ -1,0 +1,25 @@
+.header {
+  background: var(--off-black);
+  color: white;
+  margin-bottom: var(--m-size);
+  padding: var(--m-size) 0;
+}
+
+/* BEM naming conversion, block element modifier*/
+.header__title {
+  font-size: var(--l-size);
+  margin: 0;
+}
+
+.header__subtitle {
+  color: var(--off-white);
+  font-size: var(--m-size);
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (min-width: 45rem) {
+  .header {
+    margin-bottom: var(--xl-size);
+  }
+}

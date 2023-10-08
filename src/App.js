@@ -4,7 +4,7 @@ import Action from "./components/Action";
 import Options from "./components/Options";
 import AddOption from "./components/AddOption";
 import OptionModal from "./components/OptionModal";
-import "./App.css";
+// import "./styles/style.css";
 
 class App extends Component {
   state = {
@@ -67,16 +67,23 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Action
-          hasOptions={this.state.options.length > 0}
-          onPickOption={this.handlePickOption}
-        />
-        <Options
-          onRemoveAllOptions={this.handleRemoveAllOptions}
-          onRemoveOption={this.handleRemoveOption}
-          options={this.state.options}
-        />
-        <AddOption onAddOption={this.handleAddOption} />
+
+        <div className="container">
+          <Action
+            hasOptions={this.state.options.length > 0}
+            onPickOption={this.handlePickOption}
+          />
+
+          <div className="widget">
+            <Options
+              onRemoveAllOptions={this.handleRemoveAllOptions}
+              onRemoveOption={this.handleRemoveOption}
+              options={this.state.options}
+            />
+            <AddOption onAddOption={this.handleAddOption} />
+          </div>
+        </div>
+
         <OptionModal
           selectedOption={this.state.selectedOption}
           onClearSelectedOption={this.handleClearSelectedOption}

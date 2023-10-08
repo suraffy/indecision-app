@@ -1,0 +1,29 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--dark-blue);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: var(--m-size);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input,
+button {
+  border-radius: 2px;
+  outline: none;
+}
